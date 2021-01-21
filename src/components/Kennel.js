@@ -18,7 +18,7 @@ export const Kennel = () => (
         <NavBar />
         <ApplicationViews />
 
-        <h2>Animals</h2>
+        {/* <h2>Animals</h2>
         <article className="animals">
             <AnimalCard />
             <AnimalCard />
@@ -44,7 +44,7 @@ export const Kennel = () => (
             <CustomerCard />
             <CustomerCard />
             <CustomerCard />
-        </article>
+        </article> */}
 
     </>
 )
