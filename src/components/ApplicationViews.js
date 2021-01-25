@@ -2,14 +2,17 @@ import React from "react"
 import { Route } from "react-router-dom"
 import { Home } from "./Home"
 import { CustomerCard } from "./customer/CustomerCard"
-import { EmployeeCard } from "./employee/EmployeeCard"
 import { AnimalProvider } from "./animal/AnimalProvider"
 import { AnimalList } from "./animal/AnimalList"
 
 import { LocationProvider } from "./location/LocationProvider"
 import { LocationList } from "./location/LocationList"
 
+import { EmployeeProvider } from "./employee/EmployeeProvider"
+import { EmployeeList } from "./employee/EmployeeList"
 
+import { CustomerProvider } from "./customer/CustomerProvider"
+import { CustomerList } from "./customer/CustomerList"
 
 export const ApplicationViews = () => {
     return (
@@ -36,15 +39,19 @@ export const ApplicationViews = () => {
 
              {/* Render the location list when http://localhost:3000/customers */}
              <h2>Customers</h2>
-            <Route path="/customers">
-                <CustomerCard />
-            </Route>
+             <CustomerProvider>
+                <Route path="/customers">
+                    <CustomerList />
+                </Route>
+             </CustomerProvider>
 
              {/* Render the location list when http://localhost:3000/employees */}
              <h2>Employees</h2>
-            <Route path="/employees">
-                <EmployeeCard />
-            </Route>
+             <EmployeeProvider>
+                <Route path="/employees">
+                    <EmployeeList />
+                </Route>
+             </EmployeeProvider>
         </>
     )
 }
