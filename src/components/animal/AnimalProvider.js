@@ -12,7 +12,7 @@ export const AnimalProvider = (props) => { //props is an object
     //setAnimals is a function that returns the updated version of 'animals'
 
     const getAnimals = () => {
-        return fetch("http://localhost:8088/animals?_expand=location")
+        return fetch("http://localhost:8088/animals?_expand=location") //_expand=location let's you have a method 'location' in animals object. if you want to do another method, you write '&_expand=objectName
         .then(res => res.json())
         .then(setAnimals)
     }
