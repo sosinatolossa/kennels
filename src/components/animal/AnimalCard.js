@@ -6,7 +6,7 @@ export const AnimalCard = ({ animal }) => ( //instead of passing object 'props' 
         <h3 className="animal__name">{animal.name}</h3>
         {/* <div className="location__address">Breed: {animal.breed}</div> */}
         {/* <div className="animal__owner">Owner: {owner.name}</div> */}
-        <address className="location__address">{animal.location.name}</address>
+        <address className="location__address">{animal.location.address}</address>
     </section>
     
 )
