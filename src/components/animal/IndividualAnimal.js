@@ -1,2 +1,2 @@
 
-export const Animal = ({ animal, customer, location }) => (
+// export const Animal = ({ animal, customer, location }) => (
