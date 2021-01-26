@@ -11,3 +11,8 @@
       padding: 1em;
       border: 1px solid goldenrod;
   }
+
+  .locationButton {
+      display: flex;
+      flex-direction: column;
+  }
