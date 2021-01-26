@@ -15,7 +15,7 @@ export const LocationForm = () => {
 
     const [location, setLocation] = useState({
       name: "",
-      location: ""
+      address: ""
     });
 
     const history = useHistory();
@@ -34,12 +34,9 @@ export const LocationForm = () => {
     const handleControlledInputChange = (event) => {
       /* When changing a state object or array,
       always create a copy, make changes, and then set state.*/
-      const newLocation = { ...location }
+      const newLocation = { ...location } //"..." spread operator. It takes all of the properties of this Object, make a new object with its properties, then change the properties of it without affecting the regional object
       let selectedVal = event.target.value
-      // forms always provide values as strings. But we want to save the ids as numbers. This will cover both customer and location ids
-      if (event.target.id.includes("Id")) {
-        selectedVal = parseInt(selectedVal)
-      }
+      
       /* Location is an object with properties.
       Set the property to the new value
       using object bracket notation. */
@@ -47,17 +44,16 @@ export const LocationForm = () => {
       // update state
       setLocation(newLocation)
     }
-
+    
     const handleClickSaveLocation = (event) => {
       event.preventDefault() //Prevents the browser from submitting the form
+      
+      const locationAddress = location.address
 
-      const location = location.location
-
-      if (location === "") {
+      if (locationAddress === "") {
         window.alert("Please type in a location")
       } else {
-        //invoke addLocation passing Location as an argument.
-        //once complete, change the url and display the Location list
+        //invoke addLocation passing location as an argument.
         addLocation(location)
         .then(() => history.push("/locations"))
       }
@@ -69,6 +65,7 @@ export const LocationForm = () => {
           <fieldset>
               <div className="form-group">
                   <label htmlFor="name">Location name:</label>
+                  {/* event.target is this input element */}
                   <input type="text" id="name" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Location name" value={location.name}/>
               </div>
           </fieldset>
@@ -85,7 +82,7 @@ export const LocationForm = () => {
                       ))}
                   </select> */}
                   {/* <input type="text" name="location" id="location"></input> */}
-                  <input type="text" id="location" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Location address" value={location.location}/>
+                  <input type="text" id="address" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Location address" value={location.location}/>
               </div>
           </fieldset>
 
