@@ -14,6 +14,7 @@ import { LocationForm } from "./location/LocationForm"
 import { EmployeeProvider } from "./employee/EmployeeProvider"
 import { EmployeeList } from "./employee/EmployeeList"
 import { EmployeeForm } from "./employee/EmployeeForm"
+import { EmployeeDetail} from "./employee/EmployeeDetail"
 
 import { CustomerProvider } from "./customer/CustomerProvider"
 import { CustomerList } from "./customer/CustomerList"
@@ -69,6 +70,9 @@ export const ApplicationViews = () => {
              {/* Render the location list when http://localhost:3000/employees */}
              <h2>Employees</h2>
              <EmployeeProvider>
+                <Route exact path="/employees/detail/:employeeId(\d+)">
+                    <EmployeeDetail />
+                </Route>
                  <LocationProvider>
                     <Route exact path="/employees">
                         <EmployeeList />
