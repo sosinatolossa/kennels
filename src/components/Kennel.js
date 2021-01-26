@@ -3,13 +3,13 @@ import React from "react"
 import { NavBar } from "./nav/NavBar"
 import { ApplicationViews } from "./ApplicationViews"
 
-import { AnimalCard } from "./animal/AnimalCard"
+// import { AnimalCard } from "./animal/AnimalCard"
 
-import { CustomerCard } from "./customer/CustomerCard"
+// import { CustomerCard } from "./customer/CustomerCard"
 
-import { EmployeeCard } from "./employee/EmployeeCard"
+// import { EmployeeCard } from "./employee/EmployeeCard"
 
-import { LocationCard } from "./location/LocationCard"
+// import { LocationCard } from "./location/LocationCard"
 
 import "./Kennel.css"
 
