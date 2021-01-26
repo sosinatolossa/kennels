@@ -14,10 +14,12 @@ import "./Animal.css"
 export const AnimalList = () => {
   // This state changes when `getAnimals()` is invoked below
   const { animals, getAnimals } = useContext(AnimalContext)
+
   const { locations, getLocations } = useContext(LocationContext)
   const { customers, getCustomers } = useContext(CustomerContext)
 
-  // The useHistory hook let's us tell React which route we want to visit. We will use it to tell React to render the animal form component.
+  // The useHistory hook let's us tell React which route we want to visit. 
+  // We will use it to tell React to render the animal form component.
   const history = useHistory()
 
   //useEffect - reach out to the world for something
@@ -47,7 +49,7 @@ export const AnimalList = () => {
           return <AnimalCard key={animal.id} 
                             location={location}
                             customer={owner}
-                            animal={animal} /> //key and animal will become properties on an object that gets passed as an argument
+                            animal={animal} /> //key, location, customer, and animal will become properties on an object that gets passed as an argument
         })
       }
     </div>
