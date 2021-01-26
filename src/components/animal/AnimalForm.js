@@ -13,7 +13,7 @@ export const AnimalForm = () => {
     /*
     With React, we do not target the DOM with `document.querySelector()`. Instead, our return (render) reacts to state or props.
 
-    Define the intial state of the form inputs with useState()
+    Define the initial state of the form inputs with useState()
     */
 
     const [animal, setAnimal] = useState({
@@ -27,7 +27,7 @@ export const AnimalForm = () => {
 
     /*
     Reach out to the world and get customers state
-    and locations state on initialization, so we can provide their data in the form dropdowns
+    and locations state on initialization, so we can provide their data in the form drop downs
     */
     useEffect(() => {
       getCustomers().then(getLocations)

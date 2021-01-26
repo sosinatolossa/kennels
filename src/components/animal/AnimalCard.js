@@ -6,7 +6,7 @@ export const AnimalCard = ({ animal, customer, location }) => ( //instead of pas
         <h3 className="animal__name">{animal.name}</h3>
         <div className="location__address">Breed: {animal.breed}</div>
         <div className="animal__owner">Owner: {customer.name}</div>
-        <address className="location__address">{animal.location.name}</address>
+        <address className="location__address">{location.name}</address>
     </section>
     
 )
