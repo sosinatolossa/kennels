@@ -32,11 +32,15 @@ export const ApplicationViews = () => {
             {/* Render the animal list when http://localhost:3000/animals */}
             <h2>Animals</h2>
             <AnimalProvider>
+                
                 <Route exact path="/animals/detail/:animalId(\d+)">
                     <AnimalDetail />
                 </Route>
+
                 <LocationProvider>
+
                     <CustomerProvider>
+
                         {/* Note the addition of "exact" now that we have an additional route with "/animals" in it below this Route: "/animals/create" */}
                         <Route exact path="/animals">
                             <AnimalList />
@@ -45,50 +49,61 @@ export const ApplicationViews = () => {
                         <Route path="/animals/create">
                             <AnimalForm />
                         </Route>
+
                     </CustomerProvider>
+
                 </LocationProvider>
+
             </AnimalProvider>
 
             {/* Render the location list when http://localhost:3000/locations */}
             <h2>Locations</h2>
             <LocationProvider>
+
                 <Route exact path="/locations/detail/:locationId(\d+)">
                     <LocationDetail />
                 </Route>
-                    <AnimalProvider>
-                <EmployeeProvider>
-                        <Route exact path="/locations">
-                            <LocationList />
-                        </Route>
-                        <Route path="/locations/create">
-                            <LocationForm />
-                        </Route>
-                </EmployeeProvider>
-                    </AnimalProvider>
+                    
+                <Route exact path="/locations">
+                    <LocationList />
+                </Route>
+
+                <Route path="/locations/create">
+                    <LocationForm />
+                </Route>
+
             </LocationProvider>
 
              {/* Render the location list when http://localhost:3000/customers */}
              <h2>Customers</h2>
              <CustomerProvider>
+
                 <Route exact path="/customers">
                     <CustomerList />
                 </Route>
+
              </CustomerProvider>
 
              {/* Render the location list when http://localhost:3000/employees */}
              <h2>Employees</h2>
              <EmployeeProvider>
+
                 <Route exact path="/employees/detail/:employeeId(\d+)">
                     <EmployeeDetail />
                 </Route>
-                 <LocationProvider>
+
+                <LocationProvider>
+
                     <Route exact path="/employees">
                         <EmployeeList />
                     </Route>
+
                     <Route path="/employees/create">
-                            <EmployeeForm />
-                        </Route>
-                 </LocationProvider>
+                        <EmployeeForm />
+                    </Route>
+
+                </LocationProvider>
+
              </EmployeeProvider>
         </>
     )
