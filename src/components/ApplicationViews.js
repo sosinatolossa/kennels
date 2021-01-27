@@ -38,7 +38,6 @@ export const ApplicationViews = () => {
                 </Route>
 
                 <LocationProvider>
-
                     <CustomerProvider>
 
                         {/* Note the addition of "exact" now that we have an additional route with "/animals" in it below this Route: "/animals/create" */}
@@ -49,11 +48,13 @@ export const ApplicationViews = () => {
                         <Route path="/animals/create">
                             <AnimalForm />
                         </Route>
+                        
+                        <Route path="/animals/edit/:animalId(\d+)">
+                            <AnimalForm />
+                        </Route>
 
                     </CustomerProvider>
-
                 </LocationProvider>
-
             </AnimalProvider>
 
             {/* Render the location list when http://localhost:3000/locations */}
@@ -103,7 +104,6 @@ export const ApplicationViews = () => {
                     </Route>
 
                 </LocationProvider>
-
              </EmployeeProvider>
         </>
     )
