@@ -22,7 +22,7 @@ export const AnimalList = () => {
   // We will use it to tell React to render the animal form component.
   const history = useHistory()
 
-  //useEffect - reach out to the world for something
+  //useEffect - reach out to the world for something out of the react app
   useEffect(() => {
     console.log("AnimalList: Initial render before data")
     getLocations()
@@ -33,7 +33,7 @@ export const AnimalList = () => {
 
   return (
     <div className="animals">
-		      <button class="addAnimalButton"onClick={() => {history.push("/animals/create")}}>
+		      <button className="addAnimalButton"onClick={() => {history.push("/animals/create")}}>
             Add Animal
           </button>
       {/* {console.log("AnimalList: Render", animals)} */}
