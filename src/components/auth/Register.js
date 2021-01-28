@@ -10,7 +10,7 @@ export const Register = (props) => {
     const conflictDialog = useRef()
     const history = useHistory()
 
-    const existingUserCheck = () => {
+    const existingUserCheck = () => { //check your api for logout button, like customers in here.. do you want that in here??
         return fetch(`http://localhost:8088/customers?email=${email.current.value}`)
             .then(res => res.json())
             .then(user => !!user.length)

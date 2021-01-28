@@ -11,7 +11,7 @@ export const Kennel = () => (
     <>
         <Route
         render={() => {
-            if (localStorage.getItem("kennel_customer")) {
+            if (localStorage.getItem("kennel_customer")) { //if the user is logged in, show them the stuff
             return (
                 <>
                 <NavBar />
@@ -19,12 +19,12 @@ export const Kennel = () => (
                 </>
             );
             } else {
-            return <Redirect to="/login" />;
+            return <Redirect to="/login" />; //if not redirect them to the login page
             }
         }}
         />
 
-        <Route path="/login">
+        <Route path="/login"> 
             <Login />
         </Route>
         <Route path="/register">
