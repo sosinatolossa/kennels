@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from "react"
 import { useHistory } from "react-router-dom"
 import { EmployeeContext } from "./EmployeeProvider"
-import { LocationContext } from "../location/LocationProvider"
 import { EmployeeCard } from "./EmployeeCard"
+import { LocationContext } from "../location/LocationProvider"
 import "./Employee.css"
 
 export const EmployeeList = () => {

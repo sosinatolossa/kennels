@@ -104,7 +104,7 @@ export const ApplicationViews = () => {
                     </Route>
 
                 </LocationProvider>
-             </EmployeeProvider>
+              </EmployeeProvider>
         </>
     )
 }

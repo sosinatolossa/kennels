@@ -34,7 +34,7 @@ export const LocationForm = () => {
     const handleControlledInputChange = (event) => {
       /* When changing a state object or array,
       always create a copy, make changes, and then set state.*/
-      const newLocation = { ...location } //"..." spread operator. It takes all of the properties of this Object, make a new object with its properties, then change the properties of it without affecting the regional object
+      const newLocation = { ...location } //"..." spread operator. It takes all of the properties of this bbject, make a new object with its properties, then change the properties of it without affecting the regional object
       let selectedVal = event.target.value
       
       /* Location is an object with properties.
